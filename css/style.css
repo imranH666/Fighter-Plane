@@ -1,0 +1,621 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: serif;
+}
+
+section {
+    width: 100%;
+    height: 100vh;
+    background: url(../images/b1.jpg) no-repeat center / cover;
+}
+.grass2 {
+    width: 35%;
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 9999;
+}
+.grass3 {
+    width: 40%;
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    left: 30%;
+    z-index: 9999;
+}
+.grass1 {
+    width: 35%;
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.container {
+    width: 1320px;
+    height: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.rocket-main {
+    position: absolute;
+    top: 45%;
+    right: 60%;
+    width: 150px;
+    height: 150px;    
+}
+
+.addClassToRocketBody {
+    animation: rotateRocketBody 2s linear forwards;
+}
+
+
+@keyframes rotateRocketBody {
+    33% {
+        top: 25%;
+        right: 40%;
+    }
+    66% {
+        transform-origin: bottom;
+        transform: rotate(180deg);
+    }
+    100% {
+        right: 60%;
+        top: 45%;
+        transform: rotate(360deg);
+    }
+}
+
+.rocket {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 150px;
+    height: 150px;
+    /* border: 2px solid gray; */
+    transform: translate(-50%, -50%) rotate(205deg);
+    animation: rocketAnimation 2s linear infinite;
+}
+@keyframes rocketAnimation {
+    
+    50% {
+        top: 50px;
+    }
+    100% {
+        top: 20px;
+    }
+    
+}
+
+.pused {
+    animation-play-state: paused;
+}
+
+.rocket-top-chesis {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100px;
+    height: 20px;
+    background-color: #f00869;
+    transform-origin: top;
+    transform: rotate(45deg);
+    border-radius: 6px;
+}
+.rocket-bottom-chesis {
+    position: absolute;
+    top: 7px;
+    right: -14px;
+    transform-origin: bottom;
+    transform: rotate(45deg);
+    width: 70px;
+    height: 15px;
+    background-color: #f00869;
+    border-radius: 5px;
+}
+
+.rocket-line1-chesis {
+    position: absolute;
+    top: 34%;
+    left: 44%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 120px;
+    height: 10px;
+    background-color: #f00869;
+    margin-left: 20px;
+}
+
+.rocket-line2-chesis {
+    position: absolute;
+    top: 44%;
+    left: 64%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 120px;
+    height: 10px;
+    background-color: #f00869;
+    margin-left: 5px;
+}
+
+.fan-left {
+    height: 25px;
+    width: 2px;
+    background-color: #001aff;
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    transform: translateY(100%);
+}
+.fan-left::after {
+    position: absolute;
+    content: '';
+    width: 15px;
+    height: 2px;
+    background-color: #001aff;
+    bottom: 0;
+    left: 0;
+}
+
+.fan-right {
+    height: 25px;
+    width: 2px;
+    background-color: #001aff;
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+    transform: translateY(100%);
+}
+.fan-right::after {
+    position: absolute;
+    content: '';
+    width: 15px;
+    height: 2px;
+    background-color: #001aff;
+    bottom: 0;
+    right: 0;
+}
+
+.fan {
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translate(-50%, 100%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 3px solid #001aff;
+}
+
+.fan-body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    animation: fanRotation 0.2s linear infinite;
+}
+
+.fan-stan {
+    position: absolute;
+    top: 50%;
+    left: 2px;
+    transform: translateY(-50%) rotate(0);
+    width: 15px;
+    height: 5px;
+    background-color: purple;
+    
+}
+.fan-stan::after {
+    position: absolute;
+    content: '';
+    top: -5px;
+    left: 13px;
+    width: 100%;
+    height: 100%;
+    background-color: purple;
+    transform-origin: top;
+    transform: rotate(107deg);
+}
+.fan-stan::before {
+    position: absolute;
+    content: '';
+    bottom: -6px;
+    left: 14px;
+    width: 100%;
+    height: 100%;
+    background-color: purple;
+    transform-origin: top;
+    transform: rotate(42deg);
+}
+
+@keyframes fanRotation {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.shuttle {
+    display: inline-block;
+    transform: rotate(155deg);
+    position: absolute;
+    top: 20px;
+    right: 0;
+    color: #fa0bd2;
+    animation: shuttleAnimation 15s linear forwards;
+    transition: transform 0.5s;
+}
+
+@keyframes shuttleAnimation {
+    100% {
+        top: 80%;
+        right: 100%;
+    }
+}
+
+.shuttle i {
+    font-size: 90px;
+    position: relative;
+}
+.shuttle i::after {
+    position: absolute;
+    content: '';
+    width: 8px;
+    height: 18px;
+    background-color: #027c17;
+    top: 50%;
+    right: 22px;
+    transform: translateY(-50%);
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    animation: shuttleColors 0.3s linear infinite;
+}
+
+.rotationOfShuttle {
+    animation: rotationOfShuttle 2s linear infinite;
+}
+
+@keyframes rotationOfShuttle {
+    100% {
+        transform: rotate(380deg);
+        top: 100%;
+    }
+}
+@keyframes shuttleColors {
+    100% {
+        background-color: red;
+    }
+}
+
+
+@keyframes cloudAnimation2 {
+    100% {
+        top: 20%;
+        left: -50%;
+    }
+}
+
+
+.buletItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    animation: buletDirection 2s linear forwards;
+}
+
+@keyframes buletDirection {
+    100% {
+        bottom: -370px;
+        left: -420px;
+    }
+
+}
+
+.buletItem label {
+    position: absolute;
+    text-align: center;
+    transform: rotate(calc(var(--i) * (360deg / 10)));
+    inset: 0;
+}
+
+.buletItem label span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    background-color: purple;
+    border-radius: 50%;
+    font-weight: 600;
+    color: var(--black-color);
+    transform: rotate(calc(var(--i) * (-360deg / 10)));
+    margin: 0;
+    animation: beletItemAnimation 1s linear forwards;
+    animation-delay: 2s;
+}
+
+@keyframes beletItemAnimation {
+    99% {
+        margin: 50px;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+.shuttle-2 {
+    display: inline-block;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    animation: shuttle2animation 5s ease forwards;
+    z-index: 1;
+    color: #027c17;
+}
+
+.shuttle-2 i {
+    font-size: 70px;
+    transform: rotate(-45deg);
+    position: relative;
+}
+.shuttle-2 i::after {
+    position: absolute;
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #f8fc06;
+    top: 10px;
+    right: 10px;
+    animation: shuttle2Colors .5s linear infinite;
+}
+
+@keyframes shuttle2Colors {
+    100% {
+        background-color: #f70404;
+    }
+}
+
+@keyframes shuttle2animation {
+    20% {
+        bottom: 550px;
+    }
+    40% {
+        transform: rotate(-90deg);
+    }
+    50% {
+        right: 50%;
+    }
+    60% {
+        right: 50%;
+    }
+    70% {
+        right: 50%;
+    }
+    80% {
+        right: 50%;
+    }
+    100% {
+        bottom: 550px;
+        right: 100%;
+        transform: rotate(-90deg);
+    }
+}
+
+
+.enimyBulet {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    animation: enimyBuletDirection 2s linear forwards;
+    animation-delay: 2s;
+    z-index: -1;
+}
+
+@keyframes enimyBuletDirection {
+    100% {
+        top: -250px;
+        left: -300px;
+    }
+}
+
+.enimyBulet label {
+    position: absolute;
+    text-align: center;
+    transform: rotate(calc(var(--i) * (360deg / 10)));
+    inset: 0;
+}
+
+.enimyBulet label span {
+    display: inline-block;
+    width: 15px;
+    height: 10px;
+    background-color: rgb(248, 163, 4);
+    border-radius: 50%;
+    font-weight: 600;
+    color: var(--black-color);
+    transform: rotate(calc(var(--i) * (-360deg / 10)));
+    margin: 0;
+    animation: enimyBeletAnimation 1s linear forwards;
+    animation-delay: 3s;
+}
+
+@keyframes enimyBeletAnimation {
+    99% {
+        margin: 50px;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+
+
+.crow-brance  {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100px;
+    animation: crowAnimation 10s linear infinite;
+}
+@keyframes crowAnimation {
+    100% {
+        left: 100%;
+    }
+}
+
+.crow {
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    transform: rotate(35deg);
+}
+.crow2 {
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    right: 40px;
+    transform: rotate(35deg);
+}
+.crow3 {
+    font-size: 30px;
+    position: absolute;
+    top: 30px;
+    right: 70px;
+    transform: rotate(35deg);
+}
+.crow4 {
+    font-size: 30px;
+    position: absolute;
+    top: 5px;
+    right: 100px;
+    transform: rotate(35deg);
+}
+
+
+
+
+.bird-brance {
+    position: absolute;
+    top: 60%;
+    left: 0;
+    width: 200px;
+    height: 100px;
+    animation: birdAnimation 20s linear infinite;
+}
+@keyframes birdAnimation {
+    100% {
+        left: 100%;
+    }
+}
+
+.bird1 {
+    font-size: 30px;
+    position: absolute;
+    top: 10px;
+    right: 0;
+    transform: rotate(35deg);
+    color: #248806;
+}
+.bird2 {
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    right: 40px;
+    transform: rotate(35deg);
+    color: #001aff;
+}
+.bird3 {
+    font-size: 30px;
+    position: absolute;
+    top: 30px;
+    right: 70px;
+    transform: rotate(35deg);
+    color: #248806;
+}
+.bird4 {
+    font-size: 30px;
+    position: absolute;
+    top: 5px;
+    right: 100px;
+    transform: rotate(35deg);
+    color: #001aff;
+}
+
+
+.sun {
+    font-size: 60px;
+    color: #f70404;
+    animation: sunAnimation 20s linear infinite;
+}
+.cloud {
+    font-size: 80px;
+    position: absolute;
+    top: 20px;
+    left: 0;
+    animation: cloudAnimation 30s linear infinite;
+    color: #fff;
+}
+.cloud2 {
+    font-size: 60px;
+    position: absolute;
+    top: 0;
+    left: 60px;
+    transform: rotate(180deg);
+    animation: cloud2Animation 30s linear infinite;
+    color: #fff;
+}
+
+@keyframes cloudAnimation {
+    50% {
+        left: -150px;
+    }
+    100% {
+        left: 0;
+    }
+}
+@keyframes cloud2Animation {
+    50% {
+        top: -100px;
+    }
+    100% {
+        top: 0;
+    }
+}
+@keyframes sunAnimation {
+    50% {
+        color: #f8fc06;
+        transform: rotate(180deg);
+    }
+    100% {
+        color: #f70404;
+        transform: rotate(360deg);
+    }
+}
+
+
+.tree {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 150px;
+    z-index: 999;
+}
